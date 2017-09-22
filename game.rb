@@ -30,5 +30,6 @@ puts player1
 puts player2
 puts player3
 
+#adds
 player1.healthUp(10)
 puts player1
