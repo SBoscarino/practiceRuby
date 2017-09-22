@@ -1,14 +1,34 @@
-greeting = "Welcome!"
-puts greeting
+#classes require an initializer.
+#instance variables (@'s') store STATE!
+class Player
+  def initialize(name, hitPoints)
+    @name = name.capitalize
+    @hit_Points = hitPoints
+  end
 
-player1 = "Crystal"
-player2 = "Sid"
-player3 = "Thorus"
+  #list a character with their hit points
+  def to_s
+    "The character #{@name} has #{@hit_Points} health."
+  end
 
-crystalHealth = 100
-sidHealth = 100
-thorusHealth = 100
+  #health up by one
+  def healthUp(number)
+    @hit_Points += number
+  end
 
-puts "#{player1}'s health is #{crystalHealth}"
-puts "#{player2}'s health is #{sidHealth / 1.2}"
-puts "#{player3}' health is #{thorusHealth * 3}"
+  #health down by one
+  def healthDown(number)
+    @hit_Points -= number
+  end
+end
+
+player1 = Player.new("crystal", 100)
+player2 = Player.new("sidney", 200)
+player3 = Player.new("thorus", 400)
+
+puts player1
+puts player2
+puts player3
+
+player1.healthUp(10)
+puts player1
