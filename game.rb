@@ -1,5 +1,6 @@
 #classes require an initializer.
-#instance variables (@'s') store STATE!
+#initializing instance variables sets state.
+#instance variables store state. (@) They live for the life of an object.
 class Player
   def initialize(name, hitPoints)
     @name = name.capitalize
@@ -11,12 +12,20 @@ class Player
     "The character #{@name} has #{@hit_Points} health."
   end
 
-  #health up by one
-  def healthUp(number)
+  #raise health with hugs! How fun!
+  def hug(number)
     @hit_Points += number
+    puts "#{@name} got a hug!!"
+    if number >= 10
+      puts "That's a really good hug, yo! You should hug more!!"
+      puts "#{@name}'s health is now #{@hit_Points}"
+    else number <= 11
+      puts "Bro, why is your hug game so weak? Get some practice, friend."
+      puts "#{@name}'s health is now #{@hit_Points}"
+    end
   end
 
-  #health down by one
+  #lower health with bad memes!
   def healthDown(number)
     @hit_Points -= number
   end
@@ -30,6 +39,5 @@ puts player1
 puts player2
 puts player3
 
-#adds
-player1.healthUp(10)
-puts player1
+#cool stuff:
+player1.hug(10)
