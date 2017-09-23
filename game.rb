@@ -26,8 +26,16 @@ class Player
   end
 
   #lower health with bad memes!
-  def healthDown(number)
-    @hit_Points -= number
+  def badMeme(number)
+    @hit_Points += number
+    puts "#{@name} saw a poorly written meme on Reddit. It was unforgettable and not in the good way. We mourn for #{@name}."
+    if number >= 10
+      puts "Critical hit!! Super effective!"
+      puts "#{@name}'s health is now #{@hit_Points}."
+    else number <= 11
+      puts "The meme could have been better, but it was still lacking."
+      puts "#{@name}'s health is now #{@hit_Points}."
+    end
   end
 end
 
@@ -41,3 +49,4 @@ puts player3
 
 #cool stuff:
 player1.hug(10)
+player3.badMeme(50)
